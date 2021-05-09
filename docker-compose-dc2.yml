@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  DC2_node1:
+    image: scylladb/scylla
+    container_name: DC2_node1
+    restart: always
+    command: --seeds=DC1_node1,DC2_node1 --smp 1 --memory 1G --overprovisioned 1 --io-setup 1 --developer-mode 1 --api-address 0.0.0.0
+    volumes:
+    - "/home/pawel/ScyllaTraining/scylla.yaml:/etc/scylla/scylla.yaml"
+    - "/home/pawel/ScyllaTraining/cassandra-rackdc.properties.dc2.r1:/etc/scylla/cassandra-rackdc.properties"
+
+  DC2_node2:
+    image: scylladb/scylla
+    container_name: DC2_node2
+    restart: always
+    command: --seeds=DC1_node1,DC2_node1 --smp 1 --memory 1G --overprovisioned 1 --io-setup 1 --developer-mode 1 --api-address 0.0.0.0
+    volumes:
+    - "/home/pawel/ScyllaTraining/scylla.yaml:/etc/scylla/scylla.yaml"
+    - "/home/pawel/ScyllaTraining/cassandra-rackdc.properties.dc2.r2:/etc/scylla/cassandra-rackdc.properties"
+
+  DC2_node3:
+    image: scylladb/scylla
+    container_name: DC2_node3
+    restart: always
+    command: --seeds=DC1_node1,DC2_node1 --smp 1 --memory 1G --overprovisioned 1 --io-setup 1 --developer-mode 1 --api-address 0.0.0.0
+    volumes:
+    - "/home/pawel/ScyllaTraining/scylla.yaml:/etc/scylla/scylla.yaml"
+    - "/home/pawel/ScyllaTraining/cassandra-rackdc.properties.dc2.r3:/etc/scylla/cassandra-rackdc.properties"
+    
+networks:
+  web:
+    driver: bridge
