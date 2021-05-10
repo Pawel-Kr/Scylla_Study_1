@@ -189,7 +189,7 @@ UN  172.18.0.5  289.26 KB  256          ?       7a6c23c8-a304-4c7e-8497-6a61e37f
 [pawel@dell-pawel ScyllaTraining]$ sudo docker rm DC2_node1
 ```
 ### Ex. 11
-[Procedure #1 to follow](https://docs.scylladb.com/operating-scylla/procedures/cluster-management/replace_seed_node/)
+[Procedure #1 to follow](https://docs.scylladb.com/operating-scylla/procedures/cluster-management/replace_seed_node/)  
 [Procedure #2 to follow](https://docs.scylladb.com/operating-scylla/procedures/cluster-management/replace_dead_node/)
 # Authors
 Paweł Krawczyk (pawel.krawczyk@scylladb.com)
