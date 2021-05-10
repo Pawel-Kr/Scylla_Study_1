@@ -17,6 +17,8 @@
 3. Docker-Compose
 ### Misc
 All required files are uploaded to this repo.
+
+One interesting thing - when using `--experimental 1` flag in the `docker-compose-dc1.yml` file, `nodetool status` displays default datacenter and racks name, despite being set in the `cassandra-rackdc.properties.dc1` file.
 ### Ex. 1
 ```
 [pawel@dell-pawel ScyllaTraining]$ docker-compose -f docker-compose-dc1.yml up -d
