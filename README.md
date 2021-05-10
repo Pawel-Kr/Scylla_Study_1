@@ -90,9 +90,9 @@ cqlsh> ALTER KEYSPACE system_auth WITH replication = {'class': 'NetworkTopologyS
 cqlsh> ALTER KEYSPACE system_distributed WITH replication = {'class': 'NetworkTopologyStrategy', 'north': 3, 'south': 3};
 cqlsh> ALTER KEYSPACE system_traces WITH replication = {'class': 'NetworkTopologyStrategy', 'north': 3, 'south': 3};
 
-[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node1 nodetool rebuild --DC1
-[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node2 nodetool rebuild --DC1
-[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node3 nodetool rebuild --DC1
+[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node1 nodetool rebuild --north
+[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node2 nodetool rebuild --north
+[pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node3 nodetool rebuild --north
 
 [pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node1 nodetool repair -pr
 [pawel@dell-pawel ScyllaTraining]$ sudo docker exec -it DC2_node2 nodetool repair -pr
